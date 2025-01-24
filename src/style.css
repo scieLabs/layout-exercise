@@ -1,0 +1,345 @@
+* {padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: fantasy, sans-serif;
+}
+
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: wrap;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+/* -------------- reset end------------------- */
+
+/* ---- maybe something to try later ----
+#body-grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-rows: max-content;
+    grid-template-areas: "header", "aside";
+
+
+}
+
+#header {
+    grid-area: header;
+    grid-column-start: 1;
+}
+
+#aside {
+    grid-area: aside;
+}
+
+*/
+
+header {
+    background-image: linear-gradient(rgba(63, 25, 68, 0.5), rgba(0,0,0,0));
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    border-bottom-color: blueviolet;
+    border-bottom-style: double;
+}
+
+#hero-grid {
+    display: grid;
+    grid-auto-flow: dense; /* idk what this does */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 25% 25% 25% 25%;
+  /*  column-gap: 1rem; */
+    row-gap: 1rem; 
+    width: 100%;
+ /*   justify-items: right;  "stretch" to cover the whole area */
+    /* align-items: center; ---- vertical alignment ---- */
+}
+
+#navigation {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    justify-self: right; /* an individualized of justify-itens */
+
+/*sometimes the mystery is in targeting. always use IDs bitch! */
+}
+
+#navigation a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding-left: 1em;
+    color: #742031;
+    text-shadow: 5px 5px 5px #fc466b;
+    text-transform: uppercase;
+}
+
+#hero-headline {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    justify-self: center;
+    font-size: x-large;
+    letter-spacing: 2px;
+}
+
+#hero-logo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    justify-self: center;
+    align-self: center;
+} 
+
+#hero-logo img {
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px #fc466b;
+}
+
+#hero-tagline {
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    grid-row-start: 3;
+    justify-self: center;
+    font-size: xx-large;
+    letter-spacing: 2px;
+
+}
+
+#instakill {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    align-self: center;
+/* figure out how to move this goddamn thing properly later */
+}
+
+#button-instakill {
+    padding: 2rem 4rem;
+    font-size: larger;
+    text-transform: uppercase;
+    border-radius: 60px;
+    border-style: ridge;
+    border-color: #fc466b;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    box-shadow: 5px 5px 5px #fc466b;
+}
+
+#instakill a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* ------- header end ------- */
+
+main {
+    margin-top: 2rem;
+}
+
+#main-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 5fr 1fr;
+    margin-bottom: 4rem;
+
+}
+
+#grid-item1 {
+    background-color: #742031;
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    align-content: center;
+}
+
+#grid-item1 h2 {
+    justify-self: center;
+    align-self: center; /* doesnt work! */
+    word-spacing: 0.4em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: white;
+}
+
+#grid-item2 {
+    background-color: #fc466b;
+    grid-column-start: 2;
+    grid-row-start: span 2;
+    justify-items: center;
+    align-content: center; /* instead of align-self */
+    line-height: 2;
+}
+
+#grid-item2 ul {
+    align-self: center; /* doesnt work. wtf */
+    list-style-type:disc;
+    line-break: strict; /* does it do anything? */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: justify; /*to block text */
+}
+
+#grid-item2 ul li {
+    max-width: 40ch;
+    text-justify:inter-cluster; /* what does this do? */
+    font-weight:lighter; /* doesnt work */
+}
+
+#grid-item3 {
+    background-color: aqua;
+    grid-column-start: 4;
+    grid-row-start: 2;
+    align-content: center;
+    line-height: 5;
+ /*   font-family: cursive; --- apparently I cant change fonts here */
+    font-variant: small-caps;
+}
+
+#grid-item3 p {
+    justify-self: center;
+
+}
+
+#grid-item4 {
+    background-color: aquamarine;
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+#grid-item5 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+/* ----------------- this finally concludes section1 ---------------- */
+
+
+#main2-grid {
+    display: grid;
+    padding-left: 20%;
+    padding-right: 20%;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(3); /* idk whats happening! */
+}
+
+#grid2-item1 {
+    background-color: #742031;
+    grid-column-start: 1;
+    grid-column-end: span 4;
+    grid-row-start: 1;
+    color: #fc466b;
+    justify-items: center;
+    align-content: center;
+}
+
+#grid2-item2 {
+    background-color: #fc466b;
+    grid-column-start: 2;
+    grid-row-start: 2;
+
+}
+
+#grid2-item2 img {
+    background-color: aliceblue;
+    width: 400px;
+    height: auto;
+    z-index: 1;
+}
+
+#grid2-item3 {
+    background-color: aqua;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+#grid2-item4 {
+ /*   background-color: aquamarine; */
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#grid2-item4 figure {
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    z-index: 2;
+}
+
+/* ---------- the end to horrible section2 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------- end to aside */
+
+footer {
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(63, 25, 68, 0.5));
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#footer-flex {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    color: #742031;
+}
+#letter2, #letter4, #letter6, #letter8 {
+    align-self: center;
+    color: #cc3250;
+}
+
+#letter3, #letter7 {
+    align-self: flex-end;
+    color: #fc466b;
+}
+
+
+
+
+
+/* ----------- media; make for smaller screens -------------- 
+
+@media (min-width: 1080px) { /* actually works! */
+  /*  #hero-grid {
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    #navigation {
+        grid-column-start: 4;
+    }
+    
+}
+*/
