@@ -288,18 +288,84 @@ main {
     z-index: 2;
 }
 
-/* ---------- the end to horrible section2 */
+/* ---------- the end to horrible section2. here starts a recreating of the above with flex */
 
+#section2-flex h2 {
+    text-align: center;
+    margin-top: 2rem;
+}
 
+#main2-flex {
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+}
 
+#flex-item1 {
+    background-color: #742031;
+    padding: 0.5rem;
+}
 
+#flex-item2 {
+    background-color: #cc3250;
+    align-self: center;
+}
 
+#flex-item2 #figure1 img {
+    width: 400px;
+    z-index: 1;
+    position: inherit;
+}
 
+#flex-item2 #figure2 img {
+    height: 200px;
+    z-index: 2;
+    position: inherit;
 
+}
 
+#flex-item3 {
+    background-color: #fc466b;
+    padding: 0.5rem;
+    align-self: flex-end;
+}
 
+/* --------- well, flex didnt work either. z-index time -------------- */
 
+#section2-nocontainers {
+    margin-top: 2rem;
+    justify-items: center;
+}
 
+#section2-nocontainers h2 {
+    background-color: #742031;
+}
+
+#item1 {
+    background-color: #cc3250;
+    text-align: center;
+}
+
+#item2 {
+    background-color: #fc466b;
+}
+
+#figure1-1 img {
+/*    background-color: aquamarine; */
+    z-index: 0;
+    width: 500px;
+ /*   position: fixed; */
+}
+
+#figure2-2 img {
+/*    background-color: aqua; */
+    z-index: 1;
+ /*   position: fixed; */
+}
+
+#item3 {
+    background-color:beige;
+}
 
 
 
